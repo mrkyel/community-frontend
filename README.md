@@ -59,6 +59,43 @@
 - **그라데이션**: 부드러운 색상 전환
 - **애니메이션**: 부드러운 호버 및 전환 효과
 
+## 🔧 개발 도구
+
+### 코드 품질 관리
+
+- **Husky** - Git 훅 관리
+- **lint-staged** - 스테이징된 파일만 린트
+- **Prettier** - 코드 포맷팅
+- **ESLint** - 코드 품질 검사
+- **TypeScript** - 타입 체크
+
+### 개발 스크립트
+
+```bash
+# 코드 포맷팅
+yarn format
+
+# 포맷팅 체크
+yarn format:check
+
+# 린트 실행
+yarn lint
+
+# 린트 자동 수정
+yarn lint:fix
+
+# 타입 체크
+yarn type-check
+
+# 빌드
+yarn build
+```
+
+### Git 훅
+
+- **pre-commit**: 스테이징된 파일에 대해 ESLint와 Prettier 실행
+- **pre-push**: 타입 체크와 빌드 검증
+
 ## 📝 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.

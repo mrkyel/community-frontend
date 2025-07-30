@@ -379,7 +379,7 @@ export default function Home() {
               { category: "webtoon", name: "웹툰", icon: "📖", count: "1.5K" },
               { category: "movie", name: "영화", icon: "🎬", count: "1.2K" },
               { category: "game", name: "게임", icon: "🎮", count: "980" },
-            ].map((item) => (
+            ].map(item => (
               <Link
                 key={item.category}
                 href={`/categories/${item.category}`}
