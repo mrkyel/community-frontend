@@ -237,7 +237,7 @@ export const checkPasswordStrength = (
 /**
  * 로컬 스토리지에 데이터 저장
  */
-export const setLocalStorage = (key: string, value: any): void => {
+export const setLocalStorage = (key: string, value: unknown): void => {
   if (typeof window !== "undefined") {
     localStorage.setItem(key, JSON.stringify(value));
   }

@@ -10,7 +10,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { getCategoryName, getCategoryIcon, PostCategory } from "@/lib/utils";
+import { PostCategory, User } from "@/lib/types";
 
 // 카테고리 데이터
 const categories: { value: PostCategory; name: string; icon: string }[] = [
@@ -45,7 +45,7 @@ export default function Header() {
 
   // 로그인 상태 (임시로 false, 나중에 실제 인증 상태로 변경)
   const isLoggedIn = false;
-  const user = null; // 임시로 null, 나중에 실제 사용자 정보로 변경
+  const user: User | null = null; // 임시로 null, 나중에 실제 사용자 정보로 변경
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 dark:bg-gray-900/95 dark:border-gray-700">
@@ -57,7 +57,7 @@ export default function Header() {
               <span className="text-white font-bold text-sm">띵추</span>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              띵추
+              &apos;띵작&apos; 추천 커뮤니티
             </span>
           </Link>
 
@@ -198,7 +198,7 @@ export default function Header() {
                 >
                   <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                     <span className="text-white text-sm font-medium">
-                      {user?.username?.charAt(0) || "U"}
+                      {(user as User | null)?.username?.charAt(0) ?? "U"}
                     </span>
                   </div>
                   <svg
