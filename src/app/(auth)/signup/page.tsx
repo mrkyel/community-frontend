@@ -43,7 +43,6 @@ const PRIVACY_POLICY = `
 
 export default function SignupPage() {
   const router = useRouter();
-  const [step, setStep] = useState<"general" | "social">("general");
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -93,22 +92,22 @@ export default function SignupPage() {
     setIsUsernameChecking(true);
     try {
       // TODO: 실제 API 호출로 교체
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       // 임시로 랜덤하게 사용 가능/불가능 결정
       const isAvailable = Math.random() > 0.3;
       setIsUsernameAvailable(isAvailable);
 
       if (!isAvailable) {
-        setErrors((prev) => ({
+        setErrors(prev => ({
           ...prev,
           username: "이미 사용 중인 사용자명입니다.",
         }));
       } else {
-        setErrors((prev) => ({ ...prev, username: undefined }));
+        setErrors(prev => ({ ...prev, username: undefined }));
       }
-    } catch (error) {
-      setErrors((prev) => ({
+    } catch {
+      setErrors(prev => ({
         ...prev,
         username: "사용자명 확인 중 오류가 발생했습니다.",
       }));
@@ -122,28 +121,28 @@ export default function SignupPage() {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
       [name]: value,
     }));
 
     // 실시간 유효성 검사
     if (name === "email" && value && !isValidEmail(value)) {
-      setErrors((prev) => ({
+      setErrors(prev => ({
         ...prev,
         email: "올바른 이메일 형식을 입력해주세요.",
       }));
     } else if (name === "email") {
-      setErrors((prev) => ({ ...prev, email: undefined }));
+      setErrors(prev => ({ ...prev, email: undefined }));
     }
 
     if (name === "username") {
       const usernameError = validateUsername(value);
       if (usernameError) {
-        setErrors((prev) => ({ ...prev, username: usernameError }));
+        setErrors(prev => ({ ...prev, username: usernameError }));
         setIsUsernameAvailable(null);
       } else {
-        setErrors((prev) => ({ ...prev, username: undefined }));
+        setErrors(prev => ({ ...prev, username: undefined }));
         // 사용자명이 유효하면 중복 체크
         if (value.length >= 2) {
           checkUsernameAvailability(value);
@@ -154,30 +153,30 @@ export default function SignupPage() {
     if (name === "password") {
       const strength = checkPasswordStrength(value);
       if (value && strength.score < 3) {
-        setErrors((prev) => ({
+        setErrors(prev => ({
           ...prev,
           password: `비밀번호 강도: ${strength.feedback}`,
         }));
       } else {
-        setErrors((prev) => ({ ...prev, password: undefined }));
+        setErrors(prev => ({ ...prev, password: undefined }));
       }
     }
 
     if (name === "confirmPassword") {
       if (value && value !== formData.password) {
-        setErrors((prev) => ({
+        setErrors(prev => ({
           ...prev,
           confirmPassword: "비밀번호가 일치하지 않습니다.",
         }));
       } else {
-        setErrors((prev) => ({ ...prev, confirmPassword: undefined }));
+        setErrors(prev => ({ ...prev, confirmPassword: undefined }));
       }
     }
   };
 
   // 약관 동의 처리
   const handleAgreementChange = (agreement: keyof typeof agreements) => {
-    setAgreements((prev) => ({
+    setAgreements(prev => ({
       ...prev,
       [agreement]: !prev[agreement],
     }));
@@ -243,7 +242,7 @@ export default function SignupPage() {
       console.log("회원가입 시도:", formData);
 
       // 임시로 성공 처리 (나중에 실제 API로 교체)
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      await new Promise(resolve => setTimeout(resolve, 1500));
 
       // 회원가입 성공 시 로그인 페이지로 이동
       router.push("/login?message=회원가입이 완료되었습니다. 로그인해주세요.");

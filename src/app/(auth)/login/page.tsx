@@ -30,19 +30,19 @@ export default function LoginPage() {
   // 폼 데이터 변경 처리
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
       [name]: value,
     }));
 
     // 실시간 유효성 검사
     if (name === "email" && value && !isValidEmail(value)) {
-      setErrors((prev) => ({
+      setErrors(prev => ({
         ...prev,
         email: "올바른 이메일 형식을 입력해주세요.",
       }));
     } else if (name === "email") {
-      setErrors((prev) => ({ ...prev, email: undefined }));
+      setErrors(prev => ({ ...prev, email: undefined }));
     }
   };
 
@@ -76,7 +76,7 @@ export default function LoginPage() {
       console.log("로그인 시도:", formData);
 
       // 임시로 성공 처리 (나중에 실제 API로 교체)
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       // 로그인 성공 시 홈페이지로 이동
       router.push("/");

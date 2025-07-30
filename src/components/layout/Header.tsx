@@ -92,7 +92,7 @@ export default function Header() {
               {/* 카테고리 드롭다운 메뉴 */}
               <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="p-2">
-                  {categories.map((category) => (
+                  {categories.map(category => (
                     <Link
                       key={category.value}
                       href={`/categories/${category.value}`}
@@ -154,7 +154,7 @@ export default function Header() {
                     <input
                       type="text"
                       value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onChange={e => setSearchQuery(e.target.value)}
                       placeholder="추천하고 싶은 띵작을 검색해보세요..."
                       className="w-full px-4 py-2 pl-10 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-white"
                     />
@@ -323,7 +323,7 @@ export default function Header() {
                   카테고리
                 </div>
                 <div className="grid grid-cols-2 gap-2">
-                  {categories.map((category) => (
+                  {categories.map(category => (
                     <Link
                       key={category.value}
                       href={`/categories/${category.value}`}
