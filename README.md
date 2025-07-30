@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 띵추 (DingChu)
 
-## Getting Started
+> 넷플릭스, 유튜브, 웹툰 등 다양한 플랫폼의 띵작을 추천하고 소통하는 현대적인 커뮤니티 플랫폼
 
-First, run the development server:
+## 📋 프로젝트 개요
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+띵추는 다양한 엔터테인먼트 플랫폼의 띵작을 추천하고 후기를 공유하는 커뮤니티 사이트입니다. 사용자들이 좋아하는 영화, 드라마, 웹툰, 게임 등의 띵작을 추천하고, 다른 사용자들과 소통할 수 있는 플랫폼을 제공합니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🎯 주요 기능
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **다양한 플랫폼 지원**: 넷플릭스, 디즈니+, 유튜브, 웹툰, 게임 등
+- **랭킹 시스템**: 인기 띵작글 실시간 랭킹
+- **카테고리별 분류**: OTT, 유튜브, 웹툰, 영화, 게임 등
+- **소셜 기능**: 댓글, 대댓글, 좋아요 시스템
+- **검색 기능**: 제목, 태그, 플랫폼별 검색
+- **사용자 인증**: 이메일 및 소셜 로그인 (Google, Kakao, Naver)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 기술 스택
 
-## Learn More
+### Frontend
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 15** - React 기반 풀스택 프레임워크
+- **TypeScript** - 타입 안정성
+- **Tailwind CSS 4** - 유틸리티 퍼스트 CSS 프레임워크
+- **React Query** - 서버 상태 관리
+- **Zustand** - 클라이언트 상태 관리
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Backend (예정)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Node.js** - 런타임 환경
+- **Express.js** - 웹 프레임워크
+- **PostgreSQL** - 관계형 데이터베이스
+- **Prisma** - ORM
+- **JWT** - 인증
 
-## Deploy on Vercel
+### DevOps
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Vercel** - 배포 플랫폼
+- **GitHub** - 버전 관리
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 디자인 시스템
+
+### 색상 팔레트
+
+- **Primary**: Blue (#3B82F6) → Purple (#8B5CF6)
+- **Secondary**: Indigo (#6366F1)
+- **Accent**: Pink (#EC4899)
+- **Neutral**: Gray (#6B7280)
+
+### 타이포그래피
+
+- **Font Family**: Geist Sans (기본), Geist Mono (코드)
+- **Heading**: 4xl-7xl (반응형)
+- **Body**: Base, LG, XL
+
+### 컴포넌트
+
+- **글래스모피즘**: 반투명 배경 + 블러 효과
+- **그라데이션**: 부드러운 색상 전환
+- **애니메이션**: 부드러운 호버 및 전환 효과
+
+## 📝 라이선스
+
+이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
